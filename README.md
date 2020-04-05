@@ -1,3 +1,4 @@
+[![codebeat badge](https://codebeat.co/badges/9128a87e-69ab-42f5-958a-046fdc73ed7d)](https://codebeat.co/projects/github-com-pohodnya-cookpod-master) ![Build](https://github.com/pohodnya/cookpod/workflows/Build/badge.svg?branch=github-ci&event=push) [![codecov](https://codecov.io/gh/pohodnya/cookpod/branch/master/graph/badge.svg)](https://codecov.io/gh/pohodnya/cookpod)
 # Cookpod
 
 To start your Phoenix server:
