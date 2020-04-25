@@ -1,5 +1,5 @@
 .mt-4
-  = form_for :user, Routes.session_path(@conn, :create), fn form ->
+  = form_for @changeset, Routes.user_path(@conn, :create), fn form ->
     .form-group.row
       = label(form, :email, "Email", class: "col-sm-1 col-form-label")
       .col-sm-4
@@ -10,8 +10,5 @@
       .col-sm-4
         = text_input(form, :password, class: form_control(form, :password), placeholder: "Password")
         = error_tag(form, :password)
-    = if @error do
-      .invalid-feedback = @error
     .form-group
-      = submit("Sign in", class: "btn btn-primary ")
-      = link("Sign up", to: Routes.user_path(@conn, :new), class: "btn btn-secondary", method: :get)
+      = submit("Create User", class: "btn btn-primary ")

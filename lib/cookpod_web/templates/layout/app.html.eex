@@ -18,7 +18,7 @@
     </header>
     <main role="main" class="container">
       <%= if Plug.Conn.get_session(@conn, :current_user) do %>
-        Logged in as <%= Plug.Conn.get_session(@conn, :current_user) %>
+        Logged in as <%= Plug.Conn.get_session(@conn, :current_user).email %>
         <%= link "Logout", to: Routes.session_path(@conn, :delete), method: :delete %>
       <% else %>
         <a href="<%= Routes.session_path(@conn, :new) %>">Log in</a>
