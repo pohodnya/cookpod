@@ -6,6 +6,6 @@ defmodule CookpodWeb.PageController do
   end
 
   def terms(conn, _params) do
-    render(conn, "terms.html")
+    if get_session(conn, :current_user), do: render(conn, "terms.html"), else: redirect(conn, to: Routes.session_path(conn, :new))
   end
 end

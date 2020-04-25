@@ -1,5 +1,6 @@
 defmodule CookpodWeb.PageControllerTest do
   use CookpodWeb.ConnCase
+  import Plug.Test
 
   test "GET /", %{conn: conn} do
     conn = get(conn, "/")
@@ -7,7 +8,9 @@ defmodule CookpodWeb.PageControllerTest do
   end
 
   test "GET /terms", %{conn: conn} do
-    conn = get(conn, "/terms")
+    conn = conn
+      |> init_test_session(%{current_user: "test-user"})
+      |> get("/terms")
     assert html_response(conn, 200) =~ "Lorem ipsum"
   end
 end

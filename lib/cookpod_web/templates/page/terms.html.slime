@@ -1,2 +1,4 @@
 h1 Terms
 p Lorem ipsum
+
+a href=Routes.page_path(@conn, :index) Home

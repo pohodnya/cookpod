@@ -1,0 +1,6 @@
+.mt-4
+  = if @current_user do
+    p = "You are now logged in as #{@current_user}"
+    = button("Log out", to: Routes.session_path(@conn, :delete), method: :delete, class: "btn btn-warning")
+  - else
+    a href=Routes.session_path(@conn, :new) Log in
